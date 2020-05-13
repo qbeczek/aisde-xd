@@ -19,7 +19,7 @@ int main (int argc, char * const argv[]) {
 // Wybor implementacji kolejki:
 
 //	TournamentQueueOfficious<SimpleObject<int> > theQueue;
-//	TournamentQueueLazy<SimpleObject<int> > theQueue;
+	TournamentQueueLazy<SimpleObject<int> > theQueue;
 //	HeapQueueOfficious<SimpleObject<int> > theQueue;
 //	HeapQueueLazy<SimpleObject<int> > theQueue;
 //	BubbleQueueOfficious<SimpleObject<int> > theQueue;
@@ -31,9 +31,9 @@ int main (int argc, char * const argv[]) {
 	SimpleObject<int> a = SimpleObject<int>(100);
 for(int i=0; i<=100; i++)
 	{
-		a.setValue(gen.getRandom(1,100));
+		a.setValue(-i);
 		theQueue.put(a);
-	}
+}
 	theQueue.printDataTable("Dane wejściowe");
 for(int i=0; i<=100; i++)
 	{
@@ -41,7 +41,7 @@ for(int i=0; i<=100; i++)
 		std::cout << "get: " << theQueue.get().getValue() << "\n";
 	}
 catch(QueueException& exc) {
-	std::cout << "get: empty\n";
+		std::cout << "get: empty\n";
 	}	
 }
 theQueue.printDataTable("po get");
